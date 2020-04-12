@@ -7,34 +7,36 @@
     <section id="work">
       {{#each resume.work}}
         <section class="work-item">
-          {{#if name}}
-
-            {{#if summary}}
-              {{#if @first}}
-                <input id="work-item-{{@index}}" type="checkbox" class="toggle-item" checked="checked"/>
-              {{else}}
-                <input id="work-item-{{@index}}" type="checkbox" class="toggle-item"/>
-              {{/if}}
-              <label for="work-item-{{@index}}"></label>
+          {{#if summary}}
+            {{#if @first}}
+              <input id="work-item-{{@index}}" type="checkbox" class="toggle-item" checked="checked"/>
+            {{else}}
+              <input id="work-item-{{@index}}" type="checkbox" class="toggle-item"/>
             {{/if}}
-
-            <header class="clear">
-              {{#if position}}
-                <div class="position">{{position}}</div>
-              {{/if}}
-              <div class="company">{{name}}</div>
-              <div class="date">
-                {{#if startDate}}
-                  <span class="startDate">{{MY startDate}}</span>
-                {{/if}}
-                {{#if endDate}}
-                  <span class="endDate">- {{MY endDate}}</span>
-                {{else}}
-                  <span class="endDate">- Current</span>
-                {{/if}}
-              </div>
-            </header>
+            <label for="work-item-{{@index}}"></label>
           {{/if}}
+
+          <header class="clear">
+            {{#if position}}
+              <div class="position">{{position}}</div>
+            {{/if}}
+            {{#if name}}
+              <div class="company">{{name}}</div>
+            {{/if}}
+            {{#if company}}
+              <div class="company">{{company}}</div>
+            {{/if}}
+            <div class="date">
+              {{#if startDate}}
+                <span class="startDate">{{MY startDate}}</span>
+              {{/if}}
+              {{#if endDate}}
+                <span class="endDate">- {{MY endDate}}</span>
+              {{else}}
+                <span class="endDate">- Current</span>
+              {{/if}}
+            </div>
+          </header>
 
           {{#location}}
             <span class="location">
