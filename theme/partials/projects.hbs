@@ -44,22 +44,12 @@
         {{/if}}
       </header>
       {{/if}}
-      {{#location}}
-      <span class="location">
-      <span class="fas fa-map-marker-alt"></span>
-      {{#if city}}
-      <span class="city">{{city}},</span>
+      {{#if location}}
+        <span class="location">
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="city">{{location}}</span>
+        </span>
       {{/if}}
-      {{#if countryCode}}
-      <span class="countryCode">({{countryCode}})</span>
-      {{/if}}
-      {{#if region}}
-      <span class="region">
-      {{region}}
-      </span>
-      {{/if}}
-      </span>
-      {{/location}}
       {{#if url}}
       <span class="website">
         <a target="_blank" href="{{url}}">{{url}}</a>
